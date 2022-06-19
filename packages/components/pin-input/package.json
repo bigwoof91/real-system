@@ -1,6 +1,6 @@
 {
   "name": "@real-system/pin-input",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Pin input component for real system.",
   "status": "production",
   "main": "lib/index.js",
@@ -32,7 +32,7 @@
   "peerDependencies": {
     "@real-system/descendants-library": "^0.0.4",
     "@real-system/elements-primitive": "^0.0.9",
-    "@real-system/input": "^0.0.45",
+    "@real-system/input": "^0.0.46",
     "@real-system/state-library": "^0.0.11",
     "@real-system/styled-library": "^0.0.7",
     "@real-system/utils-library": "^0.0.21",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@real-system/descendants-library": "^0.0.4",
     "@real-system/elements-primitive": "^0.0.9",
-    "@real-system/input": "^0.0.45",
+    "@real-system/input": "^0.0.46",
     "@real-system/state-library": "^0.0.11",
     "@real-system/styled-library": "^0.0.7",
     "@real-system/utils-library": "^0.0.21",
