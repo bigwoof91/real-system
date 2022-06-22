@@ -1,6 +1,6 @@
 {
   "name": "@real-system/typography",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "Real System Typography components",
   "status": "production",
   "main": "lib/index.js",

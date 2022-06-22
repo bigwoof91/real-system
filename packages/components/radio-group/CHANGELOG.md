@@ -1,5 +1,12 @@
 # @real-system/radio-group
 
+## 0.0.26
+
+### Patch Changes
+
+- Updated dependencies [[`255b7c5`](https://github.com/bigwoof91/real-system/commit/255b7c575f4f6367d459795b782746b14a799173)]:
+  - @real-system/typography@0.0.47
+
 ## 0.0.25
 
 ### Patch Changes

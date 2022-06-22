@@ -1,5 +1,27 @@
 # @real-system/core
 
+## 0.0.50
+
+### Patch Changes
+
+- [#508](https://github.com/bigwoof91/real-system/pull/508) [`255b7c5`](https://github.com/bigwoof91/real-system/commit/255b7c575f4f6367d459795b782746b14a799173) Thanks [@bigwoof91](https://github.com/bigwoof91)! - remove truncate pkg and add to typography pkg
+
+- Updated dependencies [[`255b7c5`](https://github.com/bigwoof91/real-system/commit/255b7c575f4f6367d459795b782746b14a799173)]:
+  - @real-system/button@0.0.48
+  - @real-system/typography@0.0.47
+  - @real-system/alert@0.0.32
+  - @real-system/dialog@0.0.40
+  - @real-system/menu@0.0.19
+  - @real-system/popover@0.0.23
+  - @real-system/checkbox@0.0.33
+  - @real-system/field@0.0.25
+  - @real-system/input@0.0.46
+  - @real-system/radio-group@0.0.26
+  - @real-system/tooltip@0.0.24
+  - @real-system/toaster@0.0.31
+  - @real-system/pin-input@0.0.12
+  - @real-system/textarea@0.0.30
+
 ## 0.0.49
 
 ### Patch Changes

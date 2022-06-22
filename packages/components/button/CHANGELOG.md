@@ -1,5 +1,11 @@
 # @real-system/button
 
+## 0.0.48
+
+### Patch Changes
+
+- [#508](https://github.com/bigwoof91/real-system/pull/508) [`255b7c5`](https://github.com/bigwoof91/real-system/commit/255b7c575f4f6367d459795b782746b14a799173) Thanks [@bigwoof91](https://github.com/bigwoof91)! - remove truncate pkg and add to typography pkg
+
 ## 0.0.47
 
 ### Patch Changes

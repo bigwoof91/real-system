@@ -1,6 +1,6 @@
 {
   "name": "@real-system/menu",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Menu component for real system.",
   "status": "production",
   "main": "lib/index.js",
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/bigwoof91/real-system#readme",
   "peerDependencies": {
     "@real-system/animation-library": "^0.0.12",
-    "@real-system/button": "^0.0.47",
+    "@real-system/button": "^0.0.48",
     "@real-system/elements-primitive": "^0.0.9",
     "@real-system/link": "^0.0.16",
     "@real-system/menu-primitive": "^0.0.7",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@real-system/animation-library": "^0.0.12",
-    "@real-system/button": "^0.0.47",
+    "@real-system/button": "^0.0.48",
     "@real-system/elements-primitive": "^0.0.9",
     "@real-system/link": "^0.0.16",
     "@real-system/menu-primitive": "^0.0.7",

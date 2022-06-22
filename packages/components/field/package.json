@@ -1,6 +1,6 @@
 {
   "name": "@real-system/field",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Field wrapper component for real system.",
   "status": "production",
   "main": "lib/index.js",
@@ -32,7 +32,7 @@
   "peerDependencies": {
     "@real-system/flex": "^0.0.38",
     "@real-system/styled-library": "^0.0.7",
-    "@real-system/typography": "^0.0.46",
+    "@real-system/typography": "^0.0.47",
     "@real-system/utils": "^0.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@real-system/flex": "^0.0.38",
     "@real-system/styled-library": "^0.0.7",
-    "@real-system/typography": "^0.0.46",
+    "@real-system/typography": "^0.0.47",
     "@real-system/utils": "^0.0.11",
     "concurrently": "^7.2.2",
     "react": "^18.2.0",
