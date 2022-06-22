@@ -1,5 +1,12 @@
 # @real-system/menu
 
+## 0.0.19
+
+### Patch Changes
+
+- Updated dependencies [[`255b7c5`](https://github.com/bigwoof91/real-system/commit/255b7c575f4f6367d459795b782746b14a799173)]:
+  - @real-system/button@0.0.48
+
 ## 0.0.18
 
 ### Patch Changes

@@ -3843,16 +3843,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/alert@^0.0.31, @real-system/alert@workspace:packages/components/alert":
+"@real-system/alert@^0.0.32, @real-system/alert@workspace:packages/components/alert":
   version: 0.0.0-use.local
   resolution: "@real-system/alert@workspace:packages/components/alert"
   dependencies:
     "@real-system/alert-primitive": ^0.0.11
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/flex": ^0.0.38
     "@real-system/icon": ^0.0.45
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     concurrently: ^7.2.2
     react: ^18.2.0
@@ -3860,11 +3860,11 @@ __metadata:
     typescript: ^4.7.4
   peerDependencies:
     "@real-system/alert-primitive": ^0.0.11
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/flex": ^0.0.38
     "@real-system/icon": ^0.0.45
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3970,7 +3970,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/button@^0.0.47, @real-system/button@workspace:packages/components/button":
+"@real-system/button@^0.0.48, @real-system/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@real-system/button@workspace:packages/components/button"
   dependencies:
@@ -3992,7 +3992,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/checkbox@^0.0.32, @real-system/checkbox@workspace:packages/components/checkbox":
+"@real-system/checkbox@^0.0.33, @real-system/checkbox@workspace:packages/components/checkbox":
   version: 0.0.0-use.local
   resolution: "@real-system/checkbox@workspace:packages/components/checkbox"
   dependencies:
@@ -4001,7 +4001,7 @@ __metadata:
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     concurrently: ^7.2.2
@@ -4014,7 +4014,7 @@ __metadata:
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     react: ^18.2.0
@@ -4030,34 +4030,34 @@ __metadata:
     "@babel/core": ^7.18.0
     "@real-system/a11y-library": ^0.0.7
     "@real-system/accordion": ^0.0.2
-    "@real-system/alert": ^0.0.31
+    "@real-system/alert": ^0.0.32
     "@real-system/alert-primitive": ^0.0.11
     "@real-system/animation-library": ^0.0.12
     "@real-system/ariakit-library": ^0.0.12
     "@real-system/aspect-ratio": ^0.0.17
     "@real-system/badge": ^0.0.15
     "@real-system/box": ^0.0.19
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/button-primitive": ^0.0.33
-    "@real-system/checkbox": ^0.0.32
+    "@real-system/checkbox": ^0.0.33
     "@real-system/descendants-library": ^0.0.4
-    "@real-system/dialog": ^0.0.39
+    "@real-system/dialog": ^0.0.40
     "@real-system/dialog-primitive": ^0.0.23
     "@real-system/disclosure": ^0.0.2
     "@real-system/disclosure-primitive": ^0.0.1
     "@real-system/elements-primitive": ^0.0.9
-    "@real-system/field": ^0.0.24
+    "@real-system/field": ^0.0.25
     "@real-system/flex": ^0.0.38
     "@real-system/icon": ^0.0.45
-    "@real-system/input": ^0.0.45
+    "@real-system/input": ^0.0.46
     "@real-system/link": ^0.0.16
-    "@real-system/menu": ^0.0.18
+    "@real-system/menu": ^0.0.19
     "@real-system/menu-primitive": ^0.0.7
-    "@real-system/pin-input": ^0.0.11
-    "@real-system/popover": ^0.0.22
+    "@real-system/pin-input": ^0.0.12
+    "@real-system/popover": ^0.0.23
     "@real-system/popover-primitive": ^0.0.7
     "@real-system/portal-primitive": ^0.0.11
-    "@real-system/radio-group": ^0.0.25
+    "@real-system/radio-group": ^0.0.26
     "@real-system/select": ^0.0.13
     "@real-system/select-primitive": ^0.0.7
     "@real-system/separator": ^0.0.14
@@ -4066,11 +4066,11 @@ __metadata:
     "@real-system/stack": ^0.0.5
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/textarea": ^0.0.29
-    "@real-system/toaster": ^0.0.30
-    "@real-system/tooltip": ^0.0.23
+    "@real-system/textarea": ^0.0.30
+    "@real-system/toaster": ^0.0.31
+    "@real-system/tooltip": ^0.0.24
     "@real-system/tooltip-primitive": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     react: ^18.2.0
@@ -4115,18 +4115,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/dialog@^0.0.39, @real-system/dialog@workspace:packages/components/dialog":
+"@real-system/dialog@^0.0.40, @real-system/dialog@workspace:packages/components/dialog":
   version: 0.0.0-use.local
   resolution: "@real-system/dialog@workspace:packages/components/dialog"
   dependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/dialog-primitive": ^0.0.23
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     concurrently: ^7.2.2
     react: ^18.2.0
@@ -4134,13 +4134,13 @@ __metadata:
     typescript: ^4.7.4
   peerDependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/dialog-primitive": ^0.0.23
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -4207,13 +4207,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/field@^0.0.24, @real-system/field@workspace:packages/components/field":
+"@real-system/field@^0.0.25, @real-system/field@workspace:packages/components/field":
   version: 0.0.0-use.local
   resolution: "@real-system/field@workspace:packages/components/field"
   dependencies:
     "@real-system/flex": ^0.0.38
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils": ^0.0.11
     concurrently: ^7.2.2
     react: ^18.2.0
@@ -4222,7 +4222,7 @@ __metadata:
   peerDependencies:
     "@real-system/flex": ^0.0.38
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils": ^0.0.11
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -4270,13 +4270,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/input@^0.0.45, @real-system/input@workspace:packages/components/input":
+"@real-system/input@^0.0.46, @real-system/input@workspace:packages/components/input":
   version: 0.0.0-use.local
   resolution: "@real-system/input@workspace:packages/components/input"
   dependencies:
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     concurrently: ^7.2.2
@@ -4286,7 +4286,7 @@ __metadata:
   peerDependencies:
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     react: ^18.2.0
@@ -4332,12 +4332,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/menu@^0.0.18, @real-system/menu@workspace:packages/components/menu":
+"@real-system/menu@^0.0.19, @real-system/menu@workspace:packages/components/menu":
   version: 0.0.0-use.local
   resolution: "@real-system/menu@workspace:packages/components/menu"
   dependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/link": ^0.0.16
     "@real-system/menu-primitive": ^0.0.7
@@ -4350,7 +4350,7 @@ __metadata:
     typescript: ^4.7.4
   peerDependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/link": ^0.0.16
     "@real-system/menu-primitive": ^0.0.7
@@ -4362,13 +4362,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/pin-input@^0.0.11, @real-system/pin-input@workspace:packages/components/pin-input":
+"@real-system/pin-input@^0.0.12, @real-system/pin-input@workspace:packages/components/pin-input":
   version: 0.0.0-use.local
   resolution: "@real-system/pin-input@workspace:packages/components/pin-input"
   dependencies:
     "@real-system/descendants-library": ^0.0.4
     "@real-system/elements-primitive": ^0.0.9
-    "@real-system/input": ^0.0.45
+    "@real-system/input": ^0.0.46
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
     "@real-system/utils-library": ^0.0.21
@@ -4379,7 +4379,7 @@ __metadata:
   peerDependencies:
     "@real-system/descendants-library": ^0.0.4
     "@real-system/elements-primitive": ^0.0.9
-    "@real-system/input": ^0.0.45
+    "@real-system/input": ^0.0.46
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
     "@real-system/utils-library": ^0.0.21
@@ -4404,17 +4404,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/popover@^0.0.22, @real-system/popover@workspace:packages/components/popover":
+"@real-system/popover@^0.0.23, @real-system/popover@workspace:packages/components/popover":
   version: 0.0.0-use.local
   resolution: "@real-system/popover@workspace:packages/components/popover"
   dependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/flex": ^0.0.38
     "@real-system/popover-primitive": ^0.0.7
     "@real-system/state-library": 0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     concurrently: ^7.2.2
     react: ^18.2.0
@@ -4422,12 +4422,12 @@ __metadata:
     typescript: ^4.7.4
   peerDependencies:
     "@real-system/animation-library": ^0.0.12
-    "@real-system/button": ^0.0.47
+    "@real-system/button": ^0.0.48
     "@real-system/flex": ^0.0.38
     "@real-system/popover-primitive": ^0.0.7
     "@real-system/state-library": 0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -4449,7 +4449,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/radio-group@^0.0.25, @real-system/radio-group@workspace:packages/components/radio-group":
+"@real-system/radio-group@^0.0.26, @real-system/radio-group@workspace:packages/components/radio-group":
   version: 0.0.0-use.local
   resolution: "@real-system/radio-group@workspace:packages/components/radio-group"
   dependencies:
@@ -4458,7 +4458,7 @@ __metadata:
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     concurrently: ^7.2.2
@@ -4471,7 +4471,7 @@ __metadata:
     "@real-system/flex": ^0.0.38
     "@real-system/state-library": ^0.0.11
     "@real-system/styled-library": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     "@real-system/visually-hidden": ^0.0.41
     react: ^18.2.0
@@ -4631,11 +4631,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/textarea@^0.0.29, @real-system/textarea@workspace:packages/components/textarea":
+"@real-system/textarea@^0.0.30, @real-system/textarea@workspace:packages/components/textarea":
   version: 0.0.0-use.local
   resolution: "@real-system/textarea@workspace:packages/components/textarea"
   dependencies:
-    "@real-system/input": ^0.0.45
+    "@real-system/input": ^0.0.46
     "@real-system/styled-library": ^0.0.7
     "@real-system/utils-library": ^0.0.21
     concurrently: ^7.2.2
@@ -4644,7 +4644,7 @@ __metadata:
     react-dom: ^18.2.0
     typescript: ^4.7.4
   peerDependencies:
-    "@real-system/input": ^0.0.45
+    "@real-system/input": ^0.0.46
     "@real-system/styled-library": ^0.0.7
     "@real-system/utils-library": ^0.0.21
     react: ^18.2.0
@@ -4652,11 +4652,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/toaster@^0.0.30, @real-system/toaster@workspace:packages/components/toaster":
+"@real-system/toaster@^0.0.31, @real-system/toaster@workspace:packages/components/toaster":
   version: 0.0.0-use.local
   resolution: "@real-system/toaster@workspace:packages/components/toaster"
   dependencies:
-    "@real-system/alert": ^0.0.31
+    "@real-system/alert": ^0.0.32
     "@real-system/animation-library": ^0.0.12
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/portal-primitive": ^0.0.11
@@ -4667,7 +4667,7 @@ __metadata:
     react-dom: ^18.2.0
     typescript: ^4.7.4
   peerDependencies:
-    "@real-system/alert": ^0.0.31
+    "@real-system/alert": ^0.0.32
     "@real-system/animation-library": ^0.0.12
     "@real-system/elements-primitive": ^0.0.9
     "@real-system/portal-primitive": ^0.0.11
@@ -4694,14 +4694,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@real-system/tooltip@^0.0.23, @real-system/tooltip@workspace:packages/components/tooltip":
+"@real-system/tooltip@^0.0.24, @real-system/tooltip@workspace:packages/components/tooltip":
   version: 0.0.0-use.local
   resolution: "@real-system/tooltip@workspace:packages/components/tooltip"
   dependencies:
     "@real-system/animation-library": ^0.0.12
     "@real-system/styled-library": ^0.0.7
     "@real-system/tooltip-primitive": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     concurrently: ^7.2.2
     react: ^18.2.0
@@ -4711,14 +4711,14 @@ __metadata:
     "@real-system/animation-library": ^0.0.12
     "@real-system/styled-library": ^0.0.7
     "@real-system/tooltip-primitive": ^0.0.7
-    "@real-system/typography": ^0.0.46
+    "@real-system/typography": ^0.0.47
     "@real-system/utils-library": ^0.0.21
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
-"@real-system/typography@^0.0.46, @real-system/typography@workspace:packages/components/typography":
+"@real-system/typography@^0.0.47, @real-system/typography@workspace:packages/components/typography":
   version: 0.0.0-use.local
   resolution: "@real-system/typography@workspace:packages/components/typography"
   dependencies:
