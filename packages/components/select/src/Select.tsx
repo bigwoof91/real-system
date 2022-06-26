@@ -45,7 +45,7 @@ const baseStyles: StylishProps = {
   _active: { boxShadow: 'none' },
 };
 
-const selectStyles: Record<'default' | 'error', StylishProps> = {
+const selectStyles: Record<'default' | 'isInvalid', StylishProps> = {
   default: merge(baseStyles, {
     borderColor: 'gray-200',
     _hover: {
@@ -65,7 +65,7 @@ const selectStyles: Record<'default' | 'error', StylishProps> = {
       cursor: 'default',
     },
   }),
-  error: merge(baseStyles, {
+  isInvalid: merge(baseStyles, {
     borderColor: 'red-500',
     _hover: { borderColor: 'red-600' },
     _focusWithin: {
@@ -83,7 +83,9 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select(
   ref
 ) {
   const state = useSelectStateContext();
-  const styles = state.error ? selectStyles['error'] : selectStyles['default'];
+  const styles = state.isInvalid
+    ? selectStyles['isInvalid']
+    : selectStyles['default'];
 
   return (
     <>

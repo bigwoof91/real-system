@@ -7,7 +7,7 @@ import type {
 /** should match keys of values in RenamedCheckboxProps */
 
 type CustomProps = {
-  helpText?: string;
+  helperText?: string;
   errorText?: string;
 };
 

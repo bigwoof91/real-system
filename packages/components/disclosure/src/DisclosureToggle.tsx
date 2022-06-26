@@ -13,12 +13,12 @@ type DisclosureToggleProps = DisclosureHeadingProps &
 const DisclosureToggle = ({
   children,
   as = 'h2',
-  size,
+  fontScale,
   hideToggleIcon,
   ...restProps
 }: DisclosureToggleProps) => {
   return (
-    <DisclosureHeading as={as} size={size}>
+    <DisclosureHeading as={as} fontScale={fontScale}>
       <DisclosureTrigger hideToggleIcon={hideToggleIcon} {...restProps}>
         {children}
       </DisclosureTrigger>

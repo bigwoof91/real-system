@@ -40,7 +40,7 @@ const DialogHeader = forwardRef<HTMLDivElement, DialogHeaderProps>(
           {hideCloseButton ? null : (
             <Button
               tabIndex={0}
-              variant="minimal"
+              variant="ghost"
               onClick={handleOnClose}
               data-testid={makeTestId('dialog-close-button')}>
               <Icon icon="x" title="close" />

@@ -6,22 +6,10 @@ import { AriaCheckboxProps, RestoredAriaCheckboxProps } from './types';
 const restoreCheckboxProps = (
   props: AriaCheckboxProps
 ): RestoredAriaCheckboxProps => {
-  const {
-    disabled,
-    required,
-    indeterminate,
-    readonly,
-    checked,
-    defaultChecked,
-    ...restProps
-  } = props;
+  const { isChecked, defaultChecked, ...restProps } = props;
 
   return {
-    isDisabled: disabled,
-    isReadOnly: readonly,
-    isIndeterminate: indeterminate,
-    isRequired: required,
-    isSelected: checked,
+    isSelected: isChecked,
     defaultSelected: defaultChecked,
     ...restProps,
   };

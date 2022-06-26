@@ -31,6 +31,7 @@
   "homepage": "https://github.com/bigwoof91/real-system#readme",
   "peerDependencies": {
     "@real-system/flex": "^0.0.38",
+    "@real-system/state-library": "0.0.11",
     "@real-system/styled-library": "^0.0.7",
     "@real-system/typography": "^0.0.46",
     "@real-system/utils": "^0.0.11",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@real-system/flex": "^0.0.38",
+    "@real-system/state-library": "0.0.11",
     "@real-system/styled-library": "^0.0.7",
     "@real-system/typography": "^0.0.46",
     "@real-system/utils": "^0.0.11",

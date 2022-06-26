@@ -12,10 +12,10 @@ export default {
   args: {
     label: 'Copied!',
     placement: 'top',
-    disabled: false,
+    isDisabled: false,
   },
   argTypes: {
-    disabled: { type: 'boolean' },
+    isDisabled: { type: 'boolean' },
     isOpen: { type: 'boolean' },
     delay: { type: 'number' },
   },
@@ -39,7 +39,7 @@ export const CopyInputText = (args) => {
   return (
     <Box padding={20} width="30rem">
       <Input
-        readOnly
+        isReadOnly
         type="email"
         id="input-4"
         name="email-address"

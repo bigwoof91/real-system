@@ -1,56 +1,44 @@
-import React, { useMemo } from 'react';
+import * as React from 'react';
 
-import { Flex } from '@real-system/flex';
-import { HelpText, Label } from '@real-system/typography';
-import { makeTestId } from '@real-system/utils-library';
+import { Flex, FlexProps } from '@real-system/flex';
 
-import type { FieldProps } from './types';
+import {
+  FieldControlContext,
+  FieldControlProvider,
+} from './FieldControlContext';
 
+type FieldProps = FieldControlContext & FlexProps;
 /**
- *
- * @todo possibly add FieldControl and FieldGroupControl for easy-to-use field context
- */
-
-/**
- * @description A flex wrapper composed of `Label`, `HelpText` and whatever field **input** is passed as a child.
- * `Field` simplifies the work of composing field **inputs** together. `Field` should *not* be used with **controls** like
- * `RadioGroup` or `CheckboxGroup` — it is meant to be used with inputs only.
+ * @description A Field control area for form components
  */
 const Field = ({
-  builtIns = true,
   children,
-  errorText,
-  helpText,
-  label,
-  labelFor,
-  required,
+  isInvalid,
+  isRequired,
+  isReadOnly,
+  isDisabled,
+  isInline,
   ...restProps
 }: FieldProps) => {
-  const hasHelpText = useMemo(
-    () => !!helpText || !!errorText,
-    [helpText, errorText]
+  const contextValue = {
+    isInvalid,
+    isRequired,
+    isReadOnly,
+    isDisabled,
+    isInline,
+  };
+
+  const alignmentProps = React.useMemo(
+    () => (isInline ? {} : { vertical: true }),
+    [isInline]
   );
-  if (builtIns)
-    return (
-      <Flex
-        vertical
-        xAlignContent="left"
-        data-testid={makeTestId('field')}
-        gap={2}
-        {...restProps}>
-        {label && (
-          <Label htmlFor={labelFor} required={required} whiteSpace="nowrap">
-            {label}
-          </Label>
-        )}
-        {children}
-        {hasHelpText && <HelpText errorText={errorText}>{helpText}</HelpText>}
-      </Flex>
-    );
+
   return (
-    <Flex vertical gap={2} {...restProps}>
-      {children}
-    </Flex>
+    <FieldControlProvider value={contextValue}>
+      <Flex {...alignmentProps} gap={2} {...restProps}>
+        {children}
+      </Flex>
+    </FieldControlProvider>
   );
 };
 

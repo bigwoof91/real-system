@@ -7,9 +7,9 @@ import { InputBoxProps } from './InputBox';
 export type InputProps = Partial<
   Pick<
     InputBoxProps,
-    | 'disabled'
-    | 'error'
-    | 'readOnly'
+    | 'isDisabled'
+    | 'isInvalid'
+    | 'isReadOnly'
     | 'type'
     | 'prefix'
     | 'suffix'
@@ -21,6 +21,6 @@ export type InputProps = Partial<
   prefix?: React.ReactNode;
   name?: string;
   placeholder?: string;
-  required?: boolean;
+  isRequired?: boolean;
   value?: string;
 } & RealElementPrimitiveProps<'input'>;

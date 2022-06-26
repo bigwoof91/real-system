@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react';
 
 import { ButtonPrimitive } from '@real-system/button-primitive';
-import styled, { RealSystemComponentProps } from '@real-system/styled-library';
+import type { RealSystemComponentProps } from '@real-system/styled-library';
+import styled from '@real-system/styled-library';
 
 /**
  * @todo find a better way to merge base styles with Button component API styles i.e. _active style props; boxShadow
  */
-const StyledBaseButton = styled(ButtonPrimitive)({
+const StyledBaseButton = styled(ButtonPrimitive)<RealSystemComponentProps>({
   appearance: 'none',
   color: 'gray-500',
   background: 'none',
@@ -17,7 +18,7 @@ const StyledBaseButton = styled(ButtonPrimitive)({
   border: 1,
   borderRadius: 4,
   transition:
-    'background-color 200ms ease-out, box-shadow 200ms ease-in, border-color 200ms ease-in,, color 200ms ease-out',
+    'background-color 200ms ease-out, box-shadow 200ms ease-in, border-color 200ms ease-in, color 200ms ease-out',
   fontScale: 'button',
   fontFamily: 'body',
   fontWeight: 'button',

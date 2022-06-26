@@ -17,16 +17,16 @@ const addonProps = {
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   function Textarea(
-    { children, disabled, error, prefix, suffix, readOnly, ...props },
+    { children, isDisabled, isInvalid, prefix, suffix, isReadOnly, ...props },
     ref
   ) {
     return (
       <InputBox
-        disabled={disabled}
-        error={error}
+        isDisabled={isDisabled}
+        isInvalid={isInvalid}
         suffix={suffix}
         prefix={prefix}
-        readOnly={readOnly}
+        isReadOnly={isReadOnly}
         addonProps={addonProps}
         data-testid={makeTestId('text-area-input-box')}
         height="100%">
@@ -34,10 +34,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           data-testid={makeTestId('text-area')}
           // size, height and width should never get passed down
           {...preventSpreadingStyleProps(props)}
-          aria-invalid={error}
-          aria-readonly={readOnly}
-          disabled={disabled}
-          readOnly={readOnly}
+          aria-invalid={isInvalid}
+          aria-readonly={isReadOnly}
+          isDisabled={isDisabled}
+          isReadOnly={isReadOnly}
           ref={ref}
           rows={3}
           spellCheck>

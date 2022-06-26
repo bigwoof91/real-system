@@ -20,7 +20,7 @@ const useIndeterminate = <V extends string, A extends string>({
     () => values.every((value) => checkedItems.includes(value)),
     [checkedItems, values]
   );
-  const indeterminate = useMemo(
+  const isIndeterminate = useMemo(
     () => values.some((value) => checkedItems.includes(value)) && !allChecked,
     [allChecked, checkedItems, values]
   );
@@ -48,16 +48,16 @@ const useIndeterminate = <V extends string, A extends string>({
   const onIndeterminateChange = useCallback(
     (value: boolean) =>
       setCheckedItems(
-        indeterminate
+        isIndeterminate
           ? setValues(values)
           : value
           ? setValues(values)
           : emptyValues
       ),
-    [indeterminate, setCheckedItems, values, setValues]
+    [isIndeterminate, setCheckedItems, values, setValues]
   );
   return {
-    indeterminateProps: { indeterminate, onChange: onIndeterminateChange },
+    indeterminateProps: { isIndeterminate, onChange: onIndeterminateChange },
     checkBoxGroupProps: { onChange: onCheckboxGroupChange, canSelectAll: true },
   };
 };

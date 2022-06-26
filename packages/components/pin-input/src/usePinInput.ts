@@ -30,13 +30,13 @@ const [
 
 type PinInputContextValue = Omit<UsePinInputReturn, 'descendants'> & {
   /**
-   * Sets the pin input component to the disabled state
+   * Sets the pin input component to the isDisabled state
    */
-  disabled?: boolean;
+  isDisabled?: boolean;
   /**
    * Sets the pin input component to the invalid state
    */
-  invalid?: boolean;
+  isInvalid?: boolean;
 };
 
 type PinInputContext = {
@@ -67,8 +67,8 @@ const usePinInput = ({
   manageFocus = true,
   otp = false,
   id: idProp,
-  disabled,
-  invalid,
+  isDisabled,
+  isInvalid,
   type = 'number',
   mask,
 }: UsePinInputProps = {}) => {
@@ -230,8 +230,8 @@ const usePinInput = ({
         type: mask ? 'password' : inputType,
         ...restProps,
         id: `${id}-${index}`,
-        disabled: disabled,
-        'aria-invalid': invalid ? true : false,
+        disabled: isDisabled,
+        'aria-invalid': isInvalid ? true : false,
         onChange: callAllHandlers(restProps.onChange, onChange),
         onKeyDown: callAllHandlers(restProps.onKeyDown, onKeyDown),
         onFocus: callAllHandlers(restProps.onFocus, onFocus),
@@ -246,8 +246,8 @@ const usePinInput = ({
       type,
       mask,
       id,
-      disabled,
-      invalid,
+      isDisabled,
+      isInvalid,
       values,
       otp,
       placeholder,

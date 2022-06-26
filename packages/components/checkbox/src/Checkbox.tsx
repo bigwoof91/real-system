@@ -15,7 +15,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
   props,
   ref
 ) {
-  const interactionProps = useInteractions({ isDisabled: props.disabled });
+  const interactionProps = useInteractions({ isDisabled: props.isDisabled });
   const state = useToggleState(props);
   const internalRef = useRef<HTMLInputElement>(null);
   const mergedRef = useMergedRef(internalRef, ref);
@@ -26,26 +26,26 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
     mergedRef as React.RefObject<HTMLInputElement>
   );
 
-  const { errorText, helpText } = props;
-  const disabled = props.disabled || props.readonly;
+  const { errorText, helperText } = props;
+  const isDisabled = props.isDisabled || props.isReadOnly;
 
   return (
     <CheckboxWrapper
-      disabled={disabled}
-      helpText={helpText}
+      isDisabled={isDisabled}
+      helperText={helperText}
       errorText={errorText}
       {...interactionProps}>
       <VisuallyHidden as="div">
         <input {...inputProps} ref={mergedRef} />
       </VisuallyHidden>
       <CheckboxControl
-        disabled={disabled}
+        isDisabled={isDisabled}
         isSelected={state.isSelected}
-        indeterminate={props.indeterminate}
+        isIndeterminate={props.isIndeterminate}
         errorText={errorText}
         {...interactionProps}
       />
-      <CheckboxLabel disabled={disabled} required={props.required}>
+      <CheckboxLabel isDisabled={isDisabled} isRequired={props.isRequired}>
         {props.children}
       </CheckboxLabel>
     </CheckboxWrapper>

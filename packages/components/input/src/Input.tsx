@@ -16,15 +16,15 @@ type InputTypeProps = {
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   {
     type = 'text',
-    readOnly,
-    disabled,
-    error,
+    isReadOnly,
+    isDisabled,
+    isInvalid,
     suffix,
     prefix,
     placeholder,
     id,
     value,
-    required,
+    isRequired,
     name,
     ...restProps
   },
@@ -40,22 +40,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   return (
     <InputBox
-      disabled={disabled}
-      error={error}
+      isDisabled={isDisabled}
+      isInvalid={isInvalid}
       suffix={suffix}
       prefix={prefix}
-      readOnly={readOnly}
+      isReadOnly={isReadOnly}
       type={type}
       {...restProps}>
       <InputElement
-        aria-invalid={error}
-        aria-readonly={readOnly}
-        disabled={disabled}
+        aria-invalid={isInvalid}
+        aria-readonly={isReadOnly}
+        isDisabled={isDisabled}
         id={id}
         name={name}
         placeholder={placeholder}
-        readOnly={readOnly}
-        required={required}
+        isRequired={isRequired}
         value={value}
         ref={ref}
         {...restProps}

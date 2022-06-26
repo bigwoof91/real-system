@@ -3,12 +3,12 @@ import React, { forwardRef } from 'react';
 import type { UseInteractionsReturnValue } from '@real-system/a11y-library';
 import type { FlexProps } from '@real-system/flex';
 import { Flex } from '@real-system/flex';
-import { HelpText, Label } from '@real-system/typography';
+import { HelperText, Label } from '@real-system/typography';
 
 type CheckboxWrapperProps = {
   children: React.ReactNode;
-  disabled?: boolean;
-  helpText?: string;
+  isDisabled?: boolean;
+  helperText?: string;
   errorText?: string;
 } & UseInteractionsReturnValue;
 
@@ -18,11 +18,11 @@ const CheckboxWrapper = forwardRef<
 >(function CheckboxWrapper(
   {
     children,
-    disabled,
+    isDisabled,
     hoverProps,
     pressProps,
     focusWithinProps,
-    helpText,
+    helperText,
     errorText,
     ...restProps
   },
@@ -33,7 +33,7 @@ const CheckboxWrapper = forwardRef<
       <Label
         display="inline-flex"
         ref={ref}
-        disabled={disabled}
+        isDisabled={isDisabled}
         {...hoverProps}
         {...pressProps}
         {...focusWithinProps}>
@@ -41,10 +41,10 @@ const CheckboxWrapper = forwardRef<
           {children}
         </Flex>
       </Label>
-      {(helpText || errorText) && (
-        <HelpText marginTop={2} marginLeft={14} errorText={errorText}>
-          {helpText}
-        </HelpText>
+      {(helperText || errorText) && (
+        <HelperText marginTop={2} marginLeft={14} errorText={errorText}>
+          {helperText}
+        </HelperText>
       )}
     </Flex>
   );

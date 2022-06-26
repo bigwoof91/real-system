@@ -11,11 +11,11 @@ export default {
   title: 'Components/Button',
   component: Button,
   argTypes: {
-    loading: { control: 'boolean' },
+    isLoading: { control: 'boolean' },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     variant: {
       control: 'select',
-      options: ['outline', 'fill', 'minimal', 'floating'],
+      options: ['outline', 'fill', 'ghost', 'floating'],
     },
     colorScheme: {
       control: 'select',

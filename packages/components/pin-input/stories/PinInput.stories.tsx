@@ -51,3 +51,12 @@ export const Controlled = () => {
     </PinInput>
   );
 };
+
+export const Invalid = () => (
+  <PinInput mask isInvalid>
+    <PinInputField />
+    <PinInputField />
+    <PinInputField />
+    <PinInputField />
+  </PinInput>
+);

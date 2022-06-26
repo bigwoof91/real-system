@@ -18,18 +18,18 @@ export default {
   },
   argTypes: {
     errorText: { type: 'string' },
-    helpText: { type: 'string' },
-    checked: { type: 'boolean' },
-    required: { type: 'boolean' },
-    readonly: { type: 'boolean' },
-    indeterminate: { type: 'boolean' },
-    disabled: { type: 'boolean' },
+    helperText: { type: 'string' },
+    isChecked: { type: 'boolean' },
+    isRequired: { type: 'boolean' },
+    isReadOnly: { type: 'boolean' },
+    isIndeterminate: { type: 'boolean' },
+    isDisabled: { type: 'boolean' },
   },
 } as Meta;
 
 export const Default = (args) => (
   <Checkbox
-    helpText="Determines if the user has permission to add, edit and delete other users"
+    helperText="Determines if the user has permission to add, edit and delete other users"
     {...args}
   />
 );
@@ -40,18 +40,18 @@ export const CheckboxGroupStory = (args) => {
       <CheckboxGroup
         label="What engineering level is the new team member?"
         defaultValue={['associate']}
-        helpText="Select at least 1 level for the new engineer"
+        helperText="Select at least 1 level for the new engineer"
         {...args}>
         <CheckboxGroupItem value="architect">Architect</CheckboxGroupItem>
         <CheckboxGroupItem value="principle">Principle</CheckboxGroupItem>
         <CheckboxGroupItem value="staff">Staff</CheckboxGroupItem>
-        <CheckboxGroupItem value="senior" disabled>
+        <CheckboxGroupItem value="senior" isDisabled>
           Senior
         </CheckboxGroupItem>
-        <CheckboxGroupItem value="mid" disabled>
+        <CheckboxGroupItem value="mid" isDisabled>
           Mid
         </CheckboxGroupItem>
-        <CheckboxGroupItem value="associate" disabled>
+        <CheckboxGroupItem value="associate" isDisabled>
           Associate
         </CheckboxGroupItem>
       </CheckboxGroup>
@@ -77,7 +77,7 @@ export const Indeterminate = () => {
     <CheckboxGroup
       label="What engineering level is the new team member?"
       value={checkedItems}
-      helpText="Select at least 1 level for the new engineer"
+      helperText="Select at least 1 level for the new engineer"
       {...checkBoxGroupProps}>
       <CheckboxGroupItem value={indeterminateValue} {...indeterminateProps}>
         All

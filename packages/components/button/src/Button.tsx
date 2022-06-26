@@ -5,18 +5,20 @@ import styled from '@real-system/styled-library';
 import { makeTestId } from '@real-system/utils-library';
 
 import { BaseButton } from './BaseButton';
+import { ButtonProps } from './Button.model';
 import { buttonStylesConfig } from './Button.styles';
-import { ButtonProps, ButtonStates } from './types';
+
+type ButtonStates = 'isDisabled' | 'isLoading' | 'default';
 
 const getButtonState = (
-  disabled?: boolean,
-  loading?: boolean
+  isDisabled?: boolean,
+  isLoading?: boolean
 ): ButtonStates => {
-  if (disabled) {
-    return 'disabled';
+  if (isDisabled) {
+    return 'isDisabled';
   }
-  if (loading) {
-    return 'loading';
+  if (isLoading) {
+    return 'isLoading';
   }
   return 'default';
 };
@@ -35,13 +37,16 @@ const Label = styled('span')<LabelProps>((props) => ({
 const getLabelMarginX = (hasIcon: unknown) => (hasIcon ? 5 : 0);
 
 /**
+ * A Button is a clickable element which communicates that users can trigger an action.
+ * It is commonly used to submit a form, open a Dialog, toggle a menu or perform a CRUD operation.
+ *
  * @todo update sizes API with more variations
  */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     children,
-    disabled,
-    loading,
+    isDisabled,
+    isLoading: isLoadingProp,
     variant = 'outline',
     size = 'md',
     leadingIcon,
@@ -51,25 +56,23 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   },
   ref
 ): React.ReactElement {
-  const buttonState = useMemo(
-    () => getButtonState(disabled, loading),
-    [disabled, loading]
-  );
-  const isLoading = useMemo(
-    () => buttonState === 'loading' && variant !== 'floating',
-    [buttonState, variant]
-  );
-  const buttonStyles = useMemo(
-    () =>
-      buttonStylesConfig[variant]({
+  const { buttonState, isLoadingOrDisabled } = useMemo(() => {
+    const state = getButtonState(isDisabled, isLoadingProp);
+    return {
+      buttonState: state,
+      isLoadingOrDisabled: state !== 'default',
+    };
+  }, [isDisabled, isLoadingProp]);
+  const { isLoading, buttonStyles } = useMemo(
+    () => ({
+      isLoading: buttonState === 'isLoading' && variant !== 'floating',
+      buttonStyles: buttonStylesConfig[variant]({
         size,
         colorScheme,
-        loading: isLoading,
       }),
-    [variant, size, colorScheme, isLoading]
+    }),
+    [buttonState, colorScheme, size, variant]
   );
-
-  const isLoadingOrDisabled = buttonState !== 'default';
 
   return (
     <BaseButton
@@ -82,7 +85,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       <Label
         marginLeft={getLabelMarginX(leadingIcon)}
         marginRight={getLabelMarginX(trailingIcon)}>
-        {isLoading ? <Spinner size="sm" color="gray-300" /> : children}
+        {isLoading ? (
+          <Spinner size={size === 'lg' ? 'md' : 'sm'} color="gray-300" />
+        ) : (
+          children
+        )}
       </Label>
       {trailingIcon ? trailingIcon : null}
     </BaseButton>

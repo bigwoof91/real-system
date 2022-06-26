@@ -18,11 +18,11 @@ import {
 const restoreCheckboxGroupProps = (
   props: AriaCheckboxGroupProps
 ): RestoredAriaCheckboxGroupProps & CustomCheckboxGroupProps => {
-  const { disabled, readonly, ...restProps } = props;
+  const { isDisabled, isReadOnly, ...restProps } = props;
 
   return {
-    isDisabled: disabled,
-    isReadOnly: readonly,
+    isDisabled,
+    isReadOnly,
     ...restProps,
   };
 };
@@ -43,22 +43,10 @@ const useCheckboxGroup = (
 const restoreCheckboxGroupItemProps = (
   props: AriaCheckboxGroupItemProps
 ): RestoredAriaCheckboxGroupItemProps => {
-  const {
-    disabled,
-    required,
-    indeterminate,
-    readonly,
-    checked,
-    defaultChecked,
-    ...restProps
-  } = props;
+  const { isChecked, defaultChecked, ...restProps } = props;
 
   return {
-    isDisabled: disabled,
-    isReadOnly: readonly,
-    isIndeterminate: indeterminate,
-    isRequired: required,
-    isSelected: checked,
+    isSelected: isChecked,
     defaultSelected: defaultChecked,
     ...restProps,
   };

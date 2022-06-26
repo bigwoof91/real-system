@@ -11,10 +11,10 @@ export default {
   args: {
     label: "I'm a Tooltip!",
     placement: 'top',
-    disabled: false,
+    isDisabled: false,
   },
   argTypes: {
-    disabled: { type: 'boolean' },
+    isDisabled: { type: 'boolean' },
     isOpen: { type: 'boolean' },
     delay: { type: 'number' },
   },

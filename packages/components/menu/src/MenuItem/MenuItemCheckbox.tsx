@@ -24,13 +24,13 @@ const styleProps: StylishProps = {
 
 const MenuItemCheckbox = forwardRef<HTMLDivElement, MenuItemCheckboxProps>(
   function MenuItemCheckbox(
-    { children, disabled, onClick, value, name, ...restProps },
+    { children, isDisabled, onClick, value, name, ...restProps },
     ref
   ) {
     return (
       <MenuItemCheckboxPrimitive
         as={RealMenuItem}
-        disabled={disabled}
+        disabled={isDisabled}
         onClick={onClick}
         name={name}
         value={value}

@@ -16,7 +16,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   props,
   ref
 ) {
-  const { value, disabled, children } = props;
+  const { value, isDisabled, children } = props;
   const state = useRadioGroupContext();
   const internalRef = useRef<HTMLInputElement>(null);
   const mergedRef = useMergedRef(internalRef, ref);
@@ -26,7 +26,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
     mergedRef as React.RefObject<HTMLInputElement>
   );
   const { hoverProps, pressProps, focusWithinProps, ...restInteractions } =
-    useInteractions({ isDisabled: disabled });
+    useInteractions({ isDisabled });
 
   const isSelected = state.selectedValue === value;
   const isVertical = state.orientation === 'vertical' ? true : false;
@@ -34,7 +34,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   return (
     <Label
       display="inline-flex"
-      disabled={disabled}
+      isDisabled={isDisabled}
       mb={2}
       _notLast={isVertical ? { marginBottom: 5 } : { marginRight: 5 }}
       {...hoverProps}
@@ -46,11 +46,11 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
         </VisuallyHidden>
         <RadioControl
           errorText={state.errorText}
-          disabled={disabled}
+          isDisabled={isDisabled}
           isSelected={isSelected}
           {...restInteractions}
         />
-        <RadioLabel disabled={disabled}>{children}</RadioLabel>
+        <RadioLabel isDisabled={isDisabled}>{children}</RadioLabel>
       </Flex>
     </Label>
   );

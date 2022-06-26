@@ -6,23 +6,23 @@ import { Icon } from '@real-system/icon';
 
 type CheckboxIconProps = {
   isSelected: boolean;
-  disabled?: boolean;
-  indeterminate: boolean | undefined;
+  isDisabled?: boolean;
+  isIndeterminate: boolean | undefined;
 };
 
 const CheckboxIcon = ({
   isSelected,
-  disabled,
-  indeterminate,
+  isDisabled,
+  isIndeterminate,
 }: CheckboxIconProps) => {
   return (
     <Icon
-      icon={indeterminate ? 'minus' : 'check'}
+      icon={isIndeterminate ? 'minus' : 'check'}
       size="xs"
       solid
       color={
         isSelected
-          ? disabled
+          ? isDisabled
             ? 'gray-400'
             : 'blue-500-readable'
           : 'transparent'
@@ -32,9 +32,9 @@ const CheckboxIcon = ({
 };
 
 type CheckboxControlProps = {
-  disabled?: boolean;
+  isDisabled?: boolean;
   isSelected: boolean;
-  indeterminate?: boolean;
+  isIndeterminate?: boolean;
   errorText?: string;
 } & UseInteractionsReturnValue;
 
@@ -47,18 +47,18 @@ const getErrorColor = (isHovered: boolean) =>
   isHovered ? 'red-600' : 'red-500';
 
 const CheckboxControl = ({
-  disabled,
+  isDisabled,
   isSelected,
   isHovered,
   isPressed,
   isFocusedWithin,
   errorText,
-  indeterminate,
+  isIndeterminate,
 }: CheckboxControlProps) => {
   const backgroundColor = useMemo(() => {
     const defaultColor = 'blue-500-readable';
 
-    if (disabled) return 'gray-50';
+    if (isDisabled) return 'gray-50';
     if (isSelected) {
       if (errorText) {
         return getErrorColor(isHovered);
@@ -66,12 +66,12 @@ const CheckboxControl = ({
       return getSelectedColor(isHovered);
     }
     return defaultColor;
-  }, [disabled, isSelected, errorText, isHovered]);
+  }, [isDisabled, isSelected, errorText, isHovered]);
 
   const borderColor = useMemo(() => {
     const defaultColor = isHovered ? 'gray-300' : 'gray-200';
 
-    if (disabled) return 'gray-200';
+    if (isDisabled) return 'gray-200';
     if (errorText) {
       return getErrorColor(isHovered);
     }
@@ -82,7 +82,7 @@ const CheckboxControl = ({
       return 'gray-200';
     }
     return defaultColor;
-  }, [isHovered, disabled, errorText, isSelected, isFocusedWithin]);
+  }, [isHovered, isDisabled, errorText, isSelected, isFocusedWithin]);
 
   return (
     <real.span
@@ -98,8 +98,8 @@ const CheckboxControl = ({
       boxShadow={!isPressed && isFocusedWithin ? 'focus-outline' : 'none'}>
       <CheckboxIcon
         isSelected={isSelected}
-        disabled={disabled}
-        indeterminate={indeterminate}
+        isDisabled={isDisabled}
+        isIndeterminate={isIndeterminate}
       />
     </real.span>
   );

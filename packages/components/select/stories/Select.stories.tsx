@@ -25,11 +25,11 @@ export default {
 
 export const Default = (args) => {
   return (
-    <SelectContainer {...args} disabled>
+    <SelectContainer {...args} isDisabled>
       <Label>Select a fruit</Label>
       <Select maxW="20rem">
         <SelectItem value="Apple">Apple</SelectItem>
-        <SelectItem value="Grape" disabled />
+        <SelectItem value="Grape" isDisabled />
         <SelectItem value="Melon" />
       </Select>
     </SelectContainer>
@@ -44,14 +44,14 @@ export const SelectGroupStory = (args) => {
         <SelectGroup>
           <SelectGroupLabel>Fruits</SelectGroupLabel>
           <SelectItem value="Apple" />
-          <SelectItem value="Grape" disabled />
+          <SelectItem value="Grape" isDisabled />
           <SelectItem value="Melon" />
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
           <SelectGroupLabel>Vegatables</SelectGroupLabel>
           <SelectItem value="Cucumber" />
-          <SelectItem value="Pepper" disabled />
+          <SelectItem value="Pepper" isDisabled />
           <SelectItem value="Onion" />
         </SelectGroup>
       </Select>

@@ -10,7 +10,7 @@ export default {
   component: Text,
   subcomponents: {
     Heading: Text.Heading,
-    HelpText: Text.HelpText,
+    HelperText: Text.HelperText,
     Label: Text.Label,
     Code: Text.Code,
     Truncate: Text.Truncate,
@@ -52,27 +52,27 @@ export const Heading = () => (
 export const Label = () => (
   <Box display="flex" flexDirection="column">
     <Text.Label>Label</Text.Label>
-    <Text.Label disabled>Disabled Label</Text.Label>
-    <Text.Label required>Required Label</Text.Label>
-    <Text.Label required disabled>
+    <Text.Label isDisabled>Disabled Label</Text.Label>
+    <Text.Label isRequired>Required Label</Text.Label>
+    <Text.Label isRequired isDisabled>
       Disabled Required Label
     </Text.Label>
   </Box>
 );
 
-export const HelpText = () => (
+export const HelperText = () => (
   <Box display="flex" flexDirection="column">
-    <Text.HelpText id="help-text">Help text</Text.HelpText>
-    <Text.HelpText id="help-text-danger" status="danger">
+    <Text.HelperText id="help-text">Help text</Text.HelperText>
+    <Text.HelperText id="help-text-danger" status="danger">
       Danger help text
-    </Text.HelpText>
-    <Text.HelpText
+    </Text.HelperText>
+    <Text.HelperText
       id="help-text-error"
       status="danger"
       errorText="Error help text">
       Danger help text
-    </Text.HelpText>
-    <Text.HelpText
+    </Text.HelperText>
+    <Text.HelperText
       id="help-text-error-without-icon"
       errorText="Error help text without icon"
       hideErrorIcon

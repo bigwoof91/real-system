@@ -10,7 +10,7 @@ type StateProps = Pick<
 type TooltipProps = {
   children: React.ReactNode;
   label: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   /**
    * Whether to show the tooltip's arrow or not
    * @default false

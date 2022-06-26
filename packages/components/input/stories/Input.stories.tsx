@@ -5,7 +5,7 @@ import { Box } from '@real-system/box';
 import { Button } from '@real-system/button';
 import { Icon } from '@real-system/icon';
 import { Input as RealInput } from '@real-system/input';
-import { HelpText, Label } from '@real-system/typography';
+import { HelperText, Label } from '@real-system/typography';
 
 export default {
   title: 'Components/Input',
@@ -92,7 +92,7 @@ export const Showcase = (args) => {
           Password with Readonly
         </Label>
         <RealInput
-          readOnly
+          isReadOnly
           type="password"
           id="input-5"
           name="email-address"
@@ -153,10 +153,10 @@ export const Composition = (args) => {
           placeholder="personal@realsystem.com"
           {...args}
         />
-        <HelpText>Use your personal email address.</HelpText>
+        <HelperText>Use your personal email address.</HelperText>
       </Container>
       <Container>
-        <Label mb={4} htmlFor="input" required>
+        <Label mb={4} htmlFor="input" isRequired>
           Email (required with error)
         </Label>
         <RealInput
@@ -165,10 +165,10 @@ export const Composition = (args) => {
           name="email-address"
           placeholder="personal@realsystem.com"
           onChange={(e) => setValue(e.target.value)}
-          error={isEmpty || isNotEmail}
+          isInvalid={isEmpty || isNotEmail}
           {...args}
         />
-        <HelpText
+        <HelperText
           errorText={
             isEmpty
               ? 'Field is required'
@@ -177,7 +177,7 @@ export const Composition = (args) => {
               : ''
           }>
           Use your personal email address.
-        </HelpText>
+        </HelperText>
       </Container>
       <Container>
         <Label mb={4} htmlFor="input-2">
@@ -211,10 +211,10 @@ export const Composition = (args) => {
       </Container>
       <Container>
         <Label mb={4} htmlFor="input-4">
-          Email (readonly)
+          Email (read-only)
         </Label>
         <RealInput
-          readOnly
+          isReadOnly
           type="email"
           id="input-4"
           name="email-address"

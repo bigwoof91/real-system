@@ -5,7 +5,7 @@ import { real } from '@real-system/elements-primitive';
 import { Flex } from '@real-system/flex';
 
 type RadioControlProps = {
-  disabled?: boolean;
+  isDisabled?: boolean;
   isSelected: boolean;
   errorText?: string;
 } & Pick<
@@ -23,7 +23,7 @@ const getErrorColor = (isHovered: boolean) =>
   isHovered ? 'red-600' : 'red-500';
 
 const RadioControl = ({
-  disabled,
+  isDisabled,
   isSelected,
   isHovered,
   isPressed,
@@ -34,7 +34,7 @@ const RadioControl = ({
     (isDot = false) => {
       const defaultColor = 'blue-500-readable';
 
-      if (disabled) return 'gray-50';
+      if (isDisabled) return 'gray-50';
       if (isSelected && !isDot) {
         if (errorText) {
           return getErrorColor(isHovered);
@@ -43,13 +43,13 @@ const RadioControl = ({
       }
       return defaultColor;
     },
-    [disabled, isSelected, errorText, isHovered]
+    [isDisabled, isSelected, errorText, isHovered]
   );
 
   const borderColor = useMemo(() => {
     const defaultColor = isHovered ? 'gray-300' : 'gray-200';
 
-    if (disabled) return 'gray-200';
+    if (isDisabled) return 'gray-200';
     if (errorText) {
       return getErrorColor(isHovered);
     }
@@ -61,7 +61,7 @@ const RadioControl = ({
     }
 
     return defaultColor;
-  }, [isHovered, disabled, errorText, isSelected, isFocusedWithin]);
+  }, [isHovered, isDisabled, errorText, isSelected, isFocusedWithin]);
 
   return (
     <Flex

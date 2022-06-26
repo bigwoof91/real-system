@@ -24,14 +24,14 @@ const styleProps: StylishProps = {
 
 const MenuItemRadio = forwardRef<HTMLDivElement, MenuItemRadioProps>(
   function MenuItemRadio(
-    { children, disabled, onClick, value, name, hideOnClick, ...restProps },
+    { children, isDisabled, onClick, value, name, hideOnClick, ...restProps },
     ref
   ) {
     return (
       /** @ts-ignore `as` prop type conflicts */
       <MenuItemRadioPrimitive
         as={RealMenuItem}
-        disabled={disabled}
+        disabled={isDisabled}
         hideOnClick={hideOnClick}
         onClick={onClick}
         name={name}

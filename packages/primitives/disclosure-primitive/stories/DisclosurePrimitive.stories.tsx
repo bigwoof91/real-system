@@ -22,8 +22,13 @@ const Template = () => {
         display="inline-flex"
         state={disclosure}
         as={Text.Heading}
-        size="h5">
-        Info about vegetables <Icon ml={3} icon="chevron-down" />
+        size="h5"
+        cursor="pointer">
+        Info about vegetables
+        <Icon
+          ml={3}
+          icon={disclosure.visible ? 'chevron-up' : 'chevron-down'}
+        />
       </DisclosurePrimitive>
       <DisclosureContentPrimitive state={disclosure}>
         <Text>

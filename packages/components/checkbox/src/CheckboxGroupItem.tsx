@@ -23,7 +23,7 @@ const canSelectAllStyles = {
 
 const CheckboxGroupItem = forwardRef<HTMLInputElement, CheckboxGroupItemProps>(
   function CheckboxGroupItem(props, ref) {
-    const { children, helpText, value, disabled: isDisabled } = props;
+    const { children, helperText, value, isDisabled } = props;
 
     const interactionProps = useInteractions({ isDisabled });
     const state = useCheckboxGroupContext();
@@ -34,8 +34,11 @@ const CheckboxGroupItem = forwardRef<HTMLInputElement, CheckboxGroupItemProps>(
       state,
       mergedRef as React.RefObject<HTMLInputElement>
     );
-    const disabled =
-      state.isDisabled || props.disabled || state.isReadOnly || props.readonly;
+    const isDefinitelyDisabled =
+      state.isDisabled ||
+      props.isDisabled ||
+      state.isReadOnly ||
+      props.isReadOnly;
     const isSelected = state.isSelected(value);
 
     const dynamicStyles = useMemo((): FlexProps => {
@@ -56,8 +59,8 @@ const CheckboxGroupItem = forwardRef<HTMLInputElement, CheckboxGroupItemProps>(
 
     return (
       <CheckboxWrapper
-        disabled={disabled}
-        helpText={helpText}
+        isDisabled={isDefinitelyDisabled}
+        helperText={helperText}
         marginLeft={4}
         {...dynamicStyles}
         {...interactionProps}>
@@ -65,13 +68,15 @@ const CheckboxGroupItem = forwardRef<HTMLInputElement, CheckboxGroupItemProps>(
           <input {...inputProps} ref={mergedRef} />
         </VisuallyHidden>
         <CheckboxControl
-          disabled={disabled}
+          isDisabled={isDefinitelyDisabled}
           isSelected={isSelected}
-          indeterminate={props.indeterminate}
+          isIndeterminate={props.isIndeterminate}
           errorText={state.errorText}
           {...interactionProps}
         />
-        <CheckboxLabel disabled={disabled}>{children}</CheckboxLabel>
+        <CheckboxLabel isDisabled={isDefinitelyDisabled}>
+          {children}
+        </CheckboxLabel>
       </CheckboxWrapper>
     );
   }

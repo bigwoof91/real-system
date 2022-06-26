@@ -33,7 +33,7 @@ export const Default = (args) => {
   return (
     <Flex padding={10} xAlignContent="center">
       <PopoverContainer placement="bottom">
-        <PopoverButton variant="minimal">Open Popover</PopoverButton>
+        <PopoverButton variant="ghost">Open Popover</PopoverButton>
         <Popover
           hideCloseButton={args.hideCloseButton}
           hideArrow={args.hideArrow}>
@@ -80,7 +80,7 @@ export const CustomTrigger = (args) => {
               }}>
               Confirm
             </PopoverDismiss>
-            <PopoverDismiss variant="minimal">Cancel</PopoverDismiss>
+            <PopoverDismiss variant="ghost">Cancel</PopoverDismiss>
           </Flex>
         </Popover>
       </PopoverContainer>

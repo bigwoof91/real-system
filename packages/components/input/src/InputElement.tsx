@@ -7,11 +7,11 @@ import { spreadStyleProps } from '@real-system/styled-library';
 import { InputProps } from './types';
 
 const getCursor = ({
-  disabled,
-  readOnly,
+  isDisabled,
+  'aria-readonly': isReadOnly,
   type,
 }: InputProps): StylishProps['cursor'] => {
-  if ((type === 'date' || type === 'time') && !readOnly && !disabled) {
+  if ((type === 'date' || type === 'time') && !isReadOnly && !isDisabled) {
     return 'text';
   }
   return 'auto';
@@ -53,15 +53,15 @@ const InputElement = forwardRef<HTMLInputElement, InputProps>(
         _focus={{ outline: 'none' }}
         _disabled={{ cursor: 'default' }}
         transition="0.25s all ease-out"
-        aria-invalid={props['aria-invalid']}
-        aria-readonly={props.readOnly}
-        disabled={props.disabled}
+        disabled={props.isDisabled}
         id={props.id}
         name={props.name}
         placeholder={props.placeholder}
-        readOnly={props.readOnly}
-        required={props.required}
+        required={props.isRequired}
         value={props.value}
+        aria-invalid={props['aria-invalid']}
+        aria-readonly={props['aria-readonly']}
+        readOnly={props['aria-readonly']}
         {...spreadStyleProps(props, {
           display: false,
           width: false,

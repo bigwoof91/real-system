@@ -34,15 +34,15 @@ const makeColorStyles = (isDisabled = false) => {
 
 export type AddonProps = {
   children: NonNullable<React.ReactNode>;
-  disabled?: boolean;
+  isDisabled?: boolean;
   isSuffix?: boolean;
 } & RealElementPrimitiveProps<'div'>;
 
 const Addon = React.forwardRef<HTMLDivElement, AddonProps>(function Addon(
-  { children, disabled, isSuffix = false, ...restProps },
+  { children, isDisabled, isSuffix = false, ...restProps },
   ref
 ) {
-  const colorStyles = useMemo(() => makeColorStyles(disabled), [disabled]);
+  const colorStyles = useMemo(() => makeColorStyles(isDisabled), [isDisabled]);
   const positionalStyles = useMemo(
     () => makePositionalStyles(isSuffix),
     [isSuffix]

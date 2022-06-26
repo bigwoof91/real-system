@@ -7,17 +7,16 @@ type DisclosureHeadingAsTags = 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 type DisclosureHeadingProps = RealSystemComponentProps<'div'> & {
   as?: DisclosureHeadingAsTags;
-  size?: DisclosureHeadingAsTags;
+  fontScale?: DisclosureHeadingAsTags | 'button';
 };
 
 const DisclosureHeading = ({
   children,
   as = 'h2',
-  size,
+  fontScale = 'button',
   ...restProps
 }: DisclosureHeadingProps) => {
   const SpecifiedHeading = real[as];
-  const fontScale = size || 'button';
 
   return (
     <SpecifiedHeading

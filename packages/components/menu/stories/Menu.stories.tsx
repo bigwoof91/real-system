@@ -39,7 +39,7 @@ export default {
 export const Default = () => (
   <Box height="24rem">
     <Menu>
-      <MenuButton variant="minimal">
+      <MenuButton variant="ghost">
         <Icon icon="menu" />
       </MenuButton>
       <MenuList>
@@ -58,7 +58,7 @@ export const Default = () => (
           Archive
           <MenuItemCommand>A</MenuItemCommand>
         </MenuItem>
-        <MenuItem disabled>
+        <MenuItem isDisabled>
           <MenuItemIcon icon="trash" />
           Delete
           <MenuItemCommand>D</MenuItemCommand>
@@ -78,7 +78,7 @@ export const Default = () => (
 export const MenuGroups = () => (
   <Box height="24rem">
     <Menu>
-      <MenuButton variant="minimal">
+      <MenuButton variant="ghost">
         <Icon icon="menu" />
       </MenuButton>
       <MenuList>

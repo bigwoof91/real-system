@@ -1,4 +1,3 @@
-import type { RealElementPrimitiveProps } from '@real-system/elements-primitive';
 import {
   SelectStatePrimitive,
   SelectStatePrimitiveProps,
@@ -10,13 +9,9 @@ type SelectStateProps = SelectStatePrimitiveProps;
 type InternalSelectProps = { state: SelectState };
 
 type SelectFormStateProps = {
-  error?: boolean;
+  isInvalid?: boolean;
+  isDisabled?: boolean;
 };
-
-/** Select Container component */
-type SelectContainerProps = SelectStateProps &
-  RealElementPrimitiveProps<'div'> &
-  SelectFormStateProps;
 
 type OmitSelectPrivateProps<T> = Omit<T, 'state' | 'as'>;
 type CommonSelectProps<T> = Omit<T, 'state' | 'as'> &
@@ -26,7 +21,7 @@ export type {
   CommonSelectProps,
   InternalSelectProps,
   OmitSelectPrivateProps,
-  SelectContainerProps,
+  SelectFormStateProps,
   SelectState,
   SelectStateProps,
 };

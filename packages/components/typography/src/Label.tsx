@@ -11,8 +11,8 @@ export type LabelProps = {
   children?: React.ReactNode;
   htmlFor?: string;
   as?: 'label' | 'legend';
-  disabled?: boolean;
-  required?: boolean;
+  isDisabled?: boolean;
+  isRequired?: boolean;
   containerProps?: StylishProps;
   textProps?: StylishProps;
 } & CommonTextProps;
@@ -21,8 +21,8 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
   {
     children,
     as = 'label',
-    disabled,
-    required,
+    isDisabled,
+    isRequired,
     textProps,
     containerProps,
     cursor = 'pointer',
@@ -32,10 +32,10 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
 ) {
   const dynamicStyles = useMemo(
     () => ({
-      color: disabled ? 'gray-300' : 'gray-500',
-      cursor: disabled ? 'default' : cursor,
+      color: isDisabled ? 'gray-300' : 'gray-500',
+      cursor: isDisabled ? 'default' : cursor,
     }),
-    [cursor, disabled]
+    [cursor, isDisabled]
   );
 
   return (
@@ -55,8 +55,8 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
         alignItems="center"
         justifyContent="flex-start"
         {...containerProps}>
-        {required ? (
-          <RequiredDot disabled={disabled} cursor={dynamicStyles.cursor} />
+        {isRequired ? (
+          <RequiredDot isDisabled={isDisabled} cursor={dynamicStyles.cursor} />
         ) : null}
         <real.span {...textProps}>{children}</real.span>
       </real.span>

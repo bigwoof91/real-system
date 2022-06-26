@@ -11,25 +11,12 @@ import type {
 import type { Orientation } from '@react-types/shared';
 
 type RenamedCheckboxProps = {
-  disabled?: OriginalAriaCheckboxProps['isDisabled'];
-  readonly?: OriginalAriaCheckboxProps['isReadOnly'];
-  indeterminate?: OriginalAriaCheckboxProps['isIndeterminate'];
-  required?: OriginalAriaCheckboxProps['isRequired'];
-  checked?: OriginalAriaCheckboxProps['isSelected'];
+  isChecked?: OriginalAriaCheckboxProps['isSelected'];
   defaultChecked?: OriginalAriaCheckboxProps['defaultSelected'];
 };
-type RenamedCheckboxGroupProps = {
-  readonly?: OriginalAriaCheckboxGroupProps['isReadOnly'];
-  disabled?: OriginalAriaCheckboxGroupProps['isDisabled'];
-};
+
 /** should match keys of values in RenamedCheckboxProps */
-type PropsToRename =
-  | 'isDisabled'
-  | 'isReadonly'
-  | 'isIndeterminate'
-  | 'isRequired'
-  | 'isSelected'
-  | 'defaultSelected';
+type PropsToRename = 'isSelected' | 'defaultSelected';
 
 /** Checkbox */
 type AriaCheckboxProps = RenamedCheckboxProps &
@@ -41,12 +28,11 @@ type RestoredAriaCheckboxProps = OriginalAriaCheckboxProps;
 type CustomCheckboxGroupProps = {
   children: React.ReactNode;
   canSelectAll?: boolean;
-  required?: boolean;
+  isRequired?: boolean;
   orientation?: Orientation;
 };
 
-type AriaCheckboxGroupProps = RenamedCheckboxGroupProps &
-  Omit<OriginalAriaCheckboxGroupProps, PropsToRename> &
+type AriaCheckboxGroupProps = OriginalAriaCheckboxGroupProps &
   CustomCheckboxGroupProps;
 
 type RestoredAriaCheckboxGroupProps = OriginalAriaCheckboxGroupProps;
@@ -56,15 +42,8 @@ type AriaCheckboxGroupItemProps = RenamedCheckboxProps &
   Omit<OriginalAriaCheckboxGroupItemProps, PropsToRename>;
 
 type RestoredAriaCheckboxGroupItemProps = AriaCheckboxGroupItemProps &
-  // we've altered the react-aria CheckboxGroupItem api to also accept 'checked' which needs to get renamed to `isSelected`
-  Pick<
-    OriginalAriaCheckboxProps,
-    | 'isSelected'
-    | 'defaultSelected'
-    | 'isDisabled'
-    | 'isIndeterminate'
-    | 'isRequired'
-  >;
+  // we've altered the react-aria CheckboxGroupItem api to also accept 'isChecked' which needs to get renamed to `isSelected`
+  Pick<OriginalAriaCheckboxProps, 'isSelected' | 'defaultSelected'>;
 
 export type {
   // real system props

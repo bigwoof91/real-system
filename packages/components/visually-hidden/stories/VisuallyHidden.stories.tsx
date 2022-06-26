@@ -10,5 +10,5 @@ export default {
 } as Meta;
 
 export const Default = () => {
-  return <Text.Label required>First Name</Text.Label>;
+  return <Text.Label isRequired>First Name</Text.Label>;
 };

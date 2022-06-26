@@ -1,7 +1,7 @@
 import type { SelectStatePrimitive } from '@real-system/select-primitive';
 import { constate } from '@real-system/state-library';
 
-type CustomState = { error: boolean };
+type CustomState = { isInvalid: boolean; isDisabled?: boolean };
 type State = SelectStatePrimitive & CustomState;
 type SelectContext = {
   state: State;

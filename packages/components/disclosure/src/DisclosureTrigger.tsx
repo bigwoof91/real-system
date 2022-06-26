@@ -9,7 +9,7 @@ import type {
 import styled from '@real-system/styled-library';
 import { merge } from '@real-system/utils-library';
 
-import { useDisclosureStateContext } from './DisclosureContext';
+import { useDisclosureContext } from './DisclosureContext';
 
 const defaultStyles: StylishProps = {
   position: 'relative',
@@ -37,8 +37,18 @@ const defaultStyles: StylishProps = {
     color: 'gray-900',
   },
   _focusVisible: {
+    _after: {
+      zIndex: 'docked',
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      width: '100%',
+      boxShadow: 'focus-outline',
+    },
     outline: 0,
-    boxShadow: 'focus-outline',
   },
 };
 
@@ -68,17 +78,17 @@ type DisclosureTriggerProps = RealSystemComponentProps<'div'> & {
  */
 const DisclosureTrigger = ({
   children,
-  disabled,
+  isDisabled,
   hideToggleIcon,
   ...restProps
 }: DisclosureTriggerProps) => {
-  const { state, ...restContext } = useDisclosureStateContext();
+  const { state, ...restContext } = useDisclosureContext();
   const { visible } = state;
 
   return (
     <DisclosurePrimitive
       as={StyledDisclosureTrigger}
-      disabled={disabled}
+      disabled={isDisabled}
       state={state}
       {...restContext}
       {...restProps}

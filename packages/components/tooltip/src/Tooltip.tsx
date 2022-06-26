@@ -35,7 +35,7 @@ const Tooltip = forwardRef<HTMLSpanElement, TooltipProps>(function Tooltip(
     label,
     children,
     placement,
-    disabled,
+    isDisabled,
     visible,
     hideArrow = false,
     gutter = 2,
@@ -48,13 +48,13 @@ const Tooltip = forwardRef<HTMLSpanElement, TooltipProps>(function Tooltip(
 
   const state = useTooltipStatePrimitive({
     placement,
-    visible: !disabled && visible,
+    visible: !isDisabled && visible,
     gutter,
     ...restProps,
   });
   const isVisible = useMemo(
-    () => !disabled && state.visible,
-    [disabled, state.visible]
+    () => !isDisabled && state.visible,
+    [isDisabled, state.visible]
   );
   const transitions = useTransition(isVisible, TRANSITIONS_CONFIG);
 

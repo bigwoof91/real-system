@@ -5,11 +5,11 @@ import { real } from '@real-system/elements-primitive';
 import { VisuallyHidden } from '@real-system/visually-hidden';
 
 export type RequiredDotProps = {
-  disabled: boolean | undefined;
+  isDisabled: boolean | undefined;
 } & RealElementPrimitiveProps<'span'>;
 
 const RequiredDot = ({
-  disabled = false,
+  isDisabled = false,
   ...restProps
 }: RequiredDotProps): React.ReactElement => {
   return (
@@ -19,14 +19,14 @@ const RequiredDot = ({
       justifyContent="center"
       height="icon-xs"
       marginRight={2}
-      cursor={disabled ? 'default' : 'default'}>
+      cursor={isDisabled ? 'default' : 'default'}>
       <real.span
         {...restProps}
         borderRadius="circle"
         display="block"
         height="4px"
         width="4px"
-        bgColor={disabled ? 'red-200' : 'red-400'}>
+        bgColor={isDisabled ? 'red-200' : 'red-400'}>
         <VisuallyHidden>Required: </VisuallyHidden>
       </real.span>
     </real.span>

@@ -9,8 +9,10 @@ export default {
   component: Textarea,
 } as Meta;
 
-const Template = (args) => (
+export const Default = (args) => (
   <Textarea prefix={<Icon icon="information-circle" />} {...args} />
 );
 
-export const Default = Template.bind({});
+export const WithError = (args) => (
+  <Textarea prefix={<Icon icon="information-circle" />} {...args} isInvalid />
+);

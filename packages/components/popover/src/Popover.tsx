@@ -75,7 +75,7 @@ const Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
         {hideArrow ? null : <PopoverArrowPrimitive state={state} />}
         {!hideCloseButton && (
           <PopoverDismiss
-            variant="minimal"
+            variant="ghost"
             position="absolute"
             top={5}
             right={5}

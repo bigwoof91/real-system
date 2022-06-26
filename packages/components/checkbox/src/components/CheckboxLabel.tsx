@@ -6,20 +6,20 @@ import { RequiredDot } from './RequiredDot';
 
 type CheckboxLabelProps = {
   children: React.ReactNode;
-  disabled?: boolean;
-  required?: boolean;
+  isDisabled?: boolean;
+  isRequired?: boolean;
 };
 
 const CheckboxLabel = ({
   children,
-  disabled,
-  required,
+  isDisabled,
+  isRequired,
 }: CheckboxLabelProps) => {
   return (
     <>
-      {required && <RequiredDot disabled={disabled} />}
+      {isRequired && <RequiredDot isDisabled={isDisabled} />}
       <real.span
-        color={disabled ? 'gray-300' : 'gray-500'}
+        color={isDisabled ? 'gray-300' : 'gray-500'}
         fontFamily="body"
         fontScale="input"
         fontWeight="input"

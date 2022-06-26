@@ -1,5 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 
+import type { RealElementPrimitiveProps } from '@real-system/elements-primitive';
 import { real } from '@real-system/elements-primitive';
 import {
   SelectLabelPrimitive,
@@ -8,12 +9,17 @@ import {
 import { spreadStyleProps } from '@real-system/styled-library';
 
 import { SelectContextProvider } from './SelectContext';
-import { SelectContainerProps } from './types';
+import type { SelectFormStateProps, SelectStateProps } from './types';
 
 const ACCEPTED_LABEL_NAMES = {
   Label: true,
   SelectLabel: true,
 };
+
+/** Select Container component */
+type SelectContainerProps = SelectStateProps &
+  RealElementPrimitiveProps<'div'> &
+  SelectFormStateProps;
 
 const makeValidChildren = (children, state) => {
   const validChildren: any[] = [];
@@ -57,7 +63,8 @@ const SelectContainer = forwardRef<HTMLDivElement, SelectContainerProps>(
       children,
       placement = 'bottom',
       flip = true,
-      error = false,
+      isInvalid = false,
+      isDisabled = false,
       ...restProps
     },
     ref
@@ -83,7 +90,7 @@ const SelectContainer = forwardRef<HTMLDivElement, SelectContainerProps>(
         gap={2}
         {...spreadStyleProps(restProps)}
         ref={ref}>
-        <SelectContextProvider state={{ ...state, error }}>
+        <SelectContextProvider state={{ ...state, isInvalid, isDisabled }}>
           <>
             {label ? label : null}
             {validChildren ? validChildren : null}

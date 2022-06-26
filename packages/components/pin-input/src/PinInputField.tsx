@@ -9,7 +9,7 @@ import { usePinInputField } from './usePinInput';
 const StyledInput = styled('input')({
   appearance: 'none',
   display: 'block',
-  size: 'control',
+  size: '100%',
   padding: 0,
   margin: 0,
   fontFamily: 'inherit',
@@ -45,7 +45,10 @@ const PinInputField = forwardRef<HTMLInputElement, PinInputFieldProps>(
   function PinInputField(props, ref) {
     const inputProps = usePinInputField(props, ref);
     return (
-      <InputBox width="auto" error={inputProps['aria-invalid'] as boolean}>
+      <InputBox
+        width="control"
+        height="control"
+        isInvalid={inputProps['aria-invalid'] as boolean}>
         <StyledInput {...inputProps} />
       </InputBox>
     );

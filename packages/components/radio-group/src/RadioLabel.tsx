@@ -4,13 +4,13 @@ import { real } from '@real-system/elements-primitive';
 
 type RadioLabelProps = {
   children: React.ReactNode;
-  disabled?: boolean;
+  isDisabled?: boolean;
 };
 
-const RadioLabel = ({ children, disabled }: RadioLabelProps) => {
+const RadioLabel = ({ children, isDisabled }: RadioLabelProps) => {
   return (
     <real.span
-      color={disabled ? 'gray-300' : 'gray-500'}
+      color={isDisabled ? 'gray-300' : 'gray-500'}
       fontFamily="body"
       fontScale="body"
       fontWeight={3}

@@ -9,7 +9,6 @@ import type {
 } from '@real-system/a11y-library';
 
 type CustomProps = {
-  disabled?: boolean;
   helpText?: string;
   errorText?: string;
 };
@@ -20,8 +19,6 @@ type RadioProps = AriaRadioProps & CustomProps;
 /** Radio Group */
 type CustomRadioGroupProps = {
   children?: React.ReactNode;
-  readonly?: boolean;
-  required?: boolean;
 };
 
 type RadioGroupProps = AriaRadioGroupProps &

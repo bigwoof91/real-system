@@ -5,11 +5,7 @@ import type { As } from '@real-system/styled-library';
 type CommonMenuItemProps<T extends As = 'div'> = RealElementPrimitiveProps<T> &
   Pick<
     MenuItemPrimitiveProps,
-    | 'hideOnClick'
-    | 'focusOnHover'
-    | 'preventScrollOnKeyDown'
-    | 'disabled'
-    | 'children'
-  >;
+    'hideOnClick' | 'focusOnHover' | 'preventScrollOnKeyDown' | 'children'
+  > & { isDisabled?: boolean };
 
 export type { CommonMenuItemProps };

@@ -5,7 +5,7 @@ import {
   useCheckboxGroupState,
 } from '@real-system/a11y-library';
 import { Flex } from '@real-system/flex';
-import { HelpText, Label } from '@real-system/typography';
+import { HelperText, Label } from '@real-system/typography';
 import { makeTestId } from '@real-system/utils-library';
 
 import { CheckboxGroupContextProvider } from './CheckboxContext';
@@ -27,8 +27,14 @@ const CheckboxGroup: CheckboxGroupComponent = forwardRef<
 >(function CheckboxGroup(props, ref) {
   const state = useCheckboxGroupState(props);
   const { groupProps, labelProps } = useCheckboxGroup(props, state);
-  const { children, helpText, errorText, required, canSelectAll, orientation } =
-    props;
+  const {
+    children,
+    helperText,
+    errorText,
+    isRequired,
+    canSelectAll,
+    orientation,
+  } = props;
 
   return (
     <Flex
@@ -38,13 +44,13 @@ const CheckboxGroup: CheckboxGroupComponent = forwardRef<
       ref={ref}>
       <Label
         as="legend"
-        marginBottom={helpText ? 2 : 6}
-        required={required}
+        marginBottom={helperText ? 2 : 6}
+        isRequired={isRequired}
         cursor="default"
         {...labelProps}>
         {props.label}
       </Label>
-      {helpText && <HelpText marginBottom={7}>{helpText}</HelpText>}
+      {helperText && <HelperText marginBottom={7}>{helperText}</HelperText>}
       <Flex
         vertical={orientation === 'vertical' ? true : false}
         xAlignContent="left"
@@ -54,7 +60,7 @@ const CheckboxGroup: CheckboxGroupComponent = forwardRef<
           {children}
         </CheckboxGroupContextProvider>
       </Flex>
-      {errorText && <HelpText errorText={errorText} marginBottom={8} />}
+      {errorText && <HelperText errorText={errorText} marginBottom={8} />}
     </Flex>
   );
 });
