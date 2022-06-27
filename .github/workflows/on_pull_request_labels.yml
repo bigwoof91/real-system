@@ -24,12 +24,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: pr-categorizer
     steps:
-      - uses: mheap/github-action-required-labels@v1
+      - uses: mheap/github-action-required-labels@v2
         with:
           mode: minimum
           count: 1
           labels: 'status: ready to merge'
-      - uses: mheap/github-action-required-labels@v1
+      - uses: mheap/github-action-required-labels@v2
         with:
           mode: exactly
           count: 0
